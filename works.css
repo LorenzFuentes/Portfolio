@@ -38,24 +38,30 @@ html{
   font-size: 15px;
 }
 
+h1 {
+  color: #862FE0;
+}
 
-
-
+/* =========================
+   Project Section Layout
+========================= */
 .project-section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 40px;
   padding: 50px;
-  gap: 40px; /* space between text and image */
   max-width: 1200px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.093);
+  margin: 0 auto 3%;
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.09);
   backdrop-filter: blur(70px);
   -webkit-backdrop-filter: blur(50px);
-  margin-bottom: 3%;
-  border-radius: 15px;
 }
 
+/* =========================
+   Text Content
+========================= */
 .project-text {
   flex: 1;
 }
@@ -63,7 +69,7 @@ html{
 .project-text h2 {
   font-size: 28px;
   margin-bottom: 20px;
-  color: white;
+  color: #b88de7;
 }
 
 .project-text p {
@@ -73,31 +79,9 @@ html{
   font-family: 'Poppins', sans-serif;
 }
 
-.project-image {
-  flex: 1;
-}
-
-.project-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .project-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .project-image img {
-    max-width: 80%;
-  }
-}
-
-
-
+/* =========================
+   Tech Icons
+========================= */
 .tech-icons {
   display: flex;
   gap: 10px;
@@ -107,17 +91,112 @@ html{
 .icon {
   width: 40px;
   height: 40px;
-  border-radius: 50%; /* circular background */
-  background-color: #e0e0e048; /* light gray background */
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  color: #f06529; /* default HTML orange, can change per icon */
 }
 
-/* Example specific colors per tech */
-.icon i.fa-html5 { color: #f06529; }
-.icon i.fa-css3-alt { color: #2965f1; }
-.icon i.fa-js { color: #f7df1e; }
-.icon i.fa-php { color: #0018f4; }
+.icon i {
+  font-size: 20px;
+  color: white;
+}
+
+/* =========================
+   Image & Hover Effect
+========================= */
+.project-image {
+  flex: 1;
+}
+
+.image-link {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-link img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Overlay */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-overlay span {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Arrow indicator */
+.click-indicator {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover behavior */
+.image-link:hover img {
+  filter: blur(3px);
+  transform: scale(1.05);
+}
+
+.image-link:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-link:hover .click-indicator {
+  opacity: 0;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .project-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+.icon i.fa-html5 {color: orange;}
+.icon i.fa-css3 {color: rgb(0, 120, 248);}
+.icon i.fa-js{color: yellow;}
+.icon i.fa-bootstrap{color: rgb(70, 7, 165);}
+.icon i.fa-php{color: darkblue;}
+.icon.google i{color: #4285F4;}
+
+footer {
+  font-size: 15px;
+  background: #000;
+  padding: 2%;
+  text-align: center;
+  color: white;
+}

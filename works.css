@@ -1,0 +1,123 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "mograch";
+  color: white;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(resource/img/a13.png);
+  background-position: center;
+  background-size: cover;
+}
+
+html{
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+}
+
+
+.glass-links {
+  background: rgba(255, 255, 255, 0.086);
+  backdrop-filter: blur(70px);
+  -webkit-backdrop-filter: blur(50px);
+  border-radius: 30px;
+  padding: 0.2rem 1rem; 
+  display: inline-flex; 
+  gap: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-links .nav-link {
+  color: white;
+  font-size: 15px;
+}
+
+
+
+
+.project-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  gap: 40px; /* space between text and image */
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.093);
+  backdrop-filter: blur(70px);
+  -webkit-backdrop-filter: blur(50px);
+  margin-bottom: 3%;
+  border-radius: 15px;
+}
+
+.project-text {
+  flex: 1;
+}
+
+.project-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.project-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.project-image {
+  flex: 1;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-image img {
+    max-width: 80%;
+  }
+}
+
+
+
+.tech-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* circular background */
+  background-color: #e0e0e048; /* light gray background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #f06529; /* default HTML orange, can change per icon */
+}
+
+/* Example specific colors per tech */
+.icon i.fa-html5 { color: #f06529; }
+.icon i.fa-css3-alt { color: #2965f1; }
+.icon i.fa-js { color: #f7df1e; }
+.icon i.fa-php { color: #0018f4; }
